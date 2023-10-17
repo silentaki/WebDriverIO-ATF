@@ -78,12 +78,12 @@ export const config: Options.Testrunner = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         maxInstances: 1
-    //  },
-    //  {
-    //     browserName: 'firefox',
-    //     acceptInsecureCerts: true,
-    //     maxInstances: 1,
-    //     browser_version: 'stable'
+     },
+     {
+        browserName: 'firefox',
+        acceptInsecureCerts: true,
+        maxInstances: 1,
+        browser_version: 'stable'
      }],
 
     //
@@ -345,7 +345,7 @@ export const config: Options.Testrunner = {
 
     onComplete: () => {
         // Generate the Allure report using the allure-commandline
-        runAllureCommand('allure generate allure-results --clean').then(() => {
+        runAllureCommand('allure generate allure-results --clean --open && allure open').then(() => {
           console.log('Allure report generated successfully');
         });
       }
